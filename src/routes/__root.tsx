@@ -94,11 +94,14 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteNav />
-      <main className="pt-16">
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <AuthProvider>
+        <SiteNav />
+        <main className="pt-16">
+          <Outlet />
+        </main>
+        <SiteFooter />
+        <Toaster />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
