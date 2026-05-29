@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { AuthProvider } from "../lib/auth";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -92,11 +94,14 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteNav />
-      <main className="pt-16">
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <AuthProvider>
+        <SiteNav />
+        <main className="pt-16">
+          <Outlet />
+        </main>
+        <SiteFooter />
+        <Toaster />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
