@@ -10,12 +10,16 @@ export function SiteNav() {
     { to: "/", label: "Home" },
     { to: "/features", label: "Features" },
     { to: "/pricing", label: "Membership" },
+    { to: "/project", label: "Project" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ] as const;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur-md bg-background/70">
+      <div className="bg-primary text-primary-foreground text-[10px] md:text-xs tracking-[0.2em] uppercase text-center py-1.5 px-4">
+        Final Year Project · KCA University · BBIT 04105 · Roy Mukuha
+      </div>
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="w-9 h-9 bg-primary flex items-center justify-center font-display text-base text-primary-foreground group-hover:rotate-6 transition-transform">GMS</div>

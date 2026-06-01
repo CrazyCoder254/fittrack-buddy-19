@@ -66,10 +66,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "FORGE/FIT — Gym Management & Fitness Tracking" },
-      { name: "description", content: "An integrated platform for gym operations, trainer workflows, and member performance tracking." },
-      { property: "og:title", content: "FORGE/FIT — Gym Management & Fitness Tracking" },
-      { property: "og:description", content: "Integrated gym operations and fitness tracking." },
+      { title: "GMS — Gym Management System" },
+      { name: "description", content: "An integrated Gym Management System for memberships, trainer workflows, and member performance tracking. Final Year Project, KCA University." },
+      { property: "og:title", content: "GMS — Gym Management System" },
+      { property: "og:description", content: "Integrated gym operations and fitness tracking. Final Year Project, KCA University." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -96,7 +96,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <SiteNav />
-        <main className="pt-16">
+        <main className="pt-24">
           <Outlet />
         </main>
         <SiteFooter />
