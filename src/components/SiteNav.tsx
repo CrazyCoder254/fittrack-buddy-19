@@ -10,6 +10,7 @@ export function SiteNav() {
     { to: "/", label: "Home" },
     { to: "/features", label: "Features" },
     { to: "/pricing", label: "Membership" },
+    { to: "/project", label: "Project" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ] as const;
