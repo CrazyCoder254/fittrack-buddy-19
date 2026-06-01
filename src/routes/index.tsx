@@ -6,10 +6,10 @@ import trainerImg from "@/assets/trainer.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FORGE/FIT — Gym Management & Fitness Tracking System" },
-      { name: "description", content: "Unify gym operations, trainer dashboards, and member performance tracking in one platform." },
-      { property: "og:title", content: "FORGE/FIT — Gym Management & Fitness Tracking" },
-      { property: "og:description", content: "Unify gym operations, trainer dashboards, and member performance tracking." },
+      { title: "GMS — Gym Management System | Train. Track. Transform." },
+      { name: "description", content: "GMS is a modern gym in Nairobi with expert coaches, smart fitness tracking, and a community that shows up. Memberships from KES 3,500/mo." },
+      { property: "og:title", content: "GMS — Gym Management System" },
+      { property: "og:description", content: "Train with expert coaches. Track every rep. Own your progress." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -24,7 +24,7 @@ function Index() {
       <section className="relative min-h-[92vh] flex items-end overflow-hidden">
         <img
           src={heroImg}
-          alt="Athlete deadlifting in a dark gym"
+          alt="Athlete training in the GMS strength floor"
           width={1920}
           height={1280}
           className="absolute inset-0 w-full h-full object-cover opacity-70"
@@ -35,23 +35,23 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-6 pb-24 w-full">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-12 bg-primary" />
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">KCA / BBIT 04105 / Final Year Project</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Nairobi · Established 2024</span>
           </div>
           <h1 className="font-display text-[clamp(3.5rem,11vw,10rem)] leading-[0.85]">
             Train hard.<br />
-            <span className="text-primary">Manage smart.</span>
+            <span className="text-primary">Track smart.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            FORGE/FIT is an integrated Gym Management and Fitness Tracking System that
-            unifies membership operations, trainer workflows, and member performance
-            into one disciplined platform.
+            GMS is a modern strength &amp; conditioning gym powered by a built-in
+            fitness tracking platform. Real coaches, real equipment, real data —
+            so every session moves you forward.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/features" className="bg-primary text-primary-foreground px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition">
-              See the system →
+            <Link to="/pricing" className="bg-primary text-primary-foreground px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition">
+              Start free trial →
             </Link>
-            <Link to="/about" className="border border-border px-8 py-4 font-bold uppercase tracking-wider text-sm hover:border-primary transition">
-              The proposal
+            <Link to="/features" className="border border-border px-8 py-4 font-bold uppercase tracking-wider text-sm hover:border-primary transition">
+              Tour the gym
             </Link>
           </div>
         </div>
@@ -61,63 +61,68 @@ function Index() {
       <section className="border-y border-border">
         <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
           {[
-            ["03", "User Roles"],
-            ["24", "Week Build"],
-            ["6", "Dev Phases"],
-            ["∞", "PRs Tracked"],
+            ["1,200+", "Active Members"],
+            ["24", "Expert Coaches"],
+            ["80+", "Weekly Classes"],
+            ["12,000sqft", "Training Floor"],
           ].map(([n, l]) => (
             <div key={l} className="px-6 py-10 text-center">
-              <div className="font-display text-5xl md:text-6xl text-primary">{n}</div>
+              <div className="font-display text-4xl md:text-5xl text-primary">{n}</div>
               <div className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">{l}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* PROBLEM */}
+      {/* WHY GMS */}
       <section className="mx-auto max-w-7xl px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">01 / The Problem</span>
+        <div className="relative aspect-square overflow-hidden order-2 md:order-1">
+          <img src={gripImg} alt="Chalked hands gripping a barbell at GMS" width={1280} height={1280} loading="lazy" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+          <div className="absolute inset-0 ring-1 ring-inset ring-border" />
+        </div>
+        <div className="order-1 md:order-2">
+          <span className="text-xs uppercase tracking-[0.3em] text-primary">Why GMS</span>
           <h2 className="font-display text-5xl md:text-7xl mt-4">
-            Pen, paper,<br />and lost progress.
+            A gym that<br />remembers you.
           </h2>
           <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-            Members lose workout logs. Trainers juggle clients without centralized data.
-            Admins drown in manual membership and payment paperwork. Existing apps track
-            individuals — they don't run a gym.
+            Most gyms hand you a key card and forget about you. At GMS, every workout,
+            class check-in, and PR is logged in your personal dashboard — and shared
+            with your coach so the next session is sharper than the last.
           </p>
           <ul className="mt-8 space-y-3 text-sm">
-            {["Inconsistent workout tracking", "No trainer-client visibility", "Manual membership chaos", "Zero performance analytics"].map((p) => (
+            {[
+              "Personal coach assigned on day one",
+              "Workouts &amp; nutrition tracked automatically",
+              "Membership, billing &amp; bookings in one app",
+              "Open 7 days · Westlands, Nairobi",
+            ].map((p) => (
               <li key={p} className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-primary" />
-                <span className="uppercase tracking-wider text-muted-foreground">{p}</span>
+                <span className="uppercase tracking-wider text-muted-foreground" dangerouslySetInnerHTML={{ __html: p }} />
               </li>
             ))}
           </ul>
         </div>
-        <div className="relative aspect-square overflow-hidden">
-          <img src={gripImg} alt="Hands gripping a chalked barbell" width={1280} height={1280} loading="lazy" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
-          <div className="absolute inset-0 ring-1 ring-inset ring-border" />
-        </div>
       </section>
 
-      {/* THREE ROLES */}
+      {/* PROGRAMS */}
       <section className="bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6 py-32">
           <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
             <div>
-              <span className="text-xs uppercase tracking-[0.3em] text-primary">02 / The Solution</span>
-              <h2 className="font-display text-5xl md:text-7xl mt-4">One system.<br />Three roles.</h2>
+              <span className="text-xs uppercase tracking-[0.3em] text-primary">Programs</span>
+              <h2 className="font-display text-5xl md:text-7xl mt-4">Find your<br />training.</h2>
             </div>
             <p className="max-w-md text-muted-foreground">
-              Role-based access ensures every user sees exactly what matters — and nothing they don't.
+              Whether you're chasing a first pull-up or your first 200kg deadlift, there's a program — and a coach — built for it.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
-              { n: "Member", t: "Track every rep", d: "Personalized workout plans, meal logging, visual progress analytics, and automated feedback to keep momentum.", items: ["Workout library", "Nutrition plans", "Progress charts", "Goal tracking"] },
-              { n: "Trainer", t: "Coach at scale", d: "Assign programs, monitor adherence, evaluate trends across every client from a single command center.", items: ["Client dashboard", "Program builder", "Adherence stats", "Performance review"] },
-              { n: "Admin", t: "Run the floor", d: "Automated membership, subscriptions, payments, and reporting to remove the paperwork drag.", items: ["Member registry", "Billing & subs", "Staff management", "Analytics reports"] },
+              { n: "Strength", t: "Barbell Club", d: "Squat, bench, deadlift, press. Small groups capped at 8, coached every session.", items: ["3x / week", "Form video review", "Programmed cycles"] },
+              { n: "Conditioning", t: "GMS Method", d: "High-intensity classes mixing kettlebells, sled, rower, and bodyweight strength.", items: ["45 min sessions", "All fitness levels", "Live heart-rate display"] },
+              { n: "1-on-1", t: "Personal Training", d: "Fully tailored programming, nutrition coaching, and weekly check-ins with a dedicated coach.", items: ["Custom plan", "Macro coaching", "Weekly progress reviews"] },
             ].map((r, i) => (
               <div key={r.n} className="bg-background p-10 group hover:bg-card transition">
                 <div className="flex items-baseline justify-between">
@@ -139,51 +144,57 @@ function Index() {
         </div>
       </section>
 
-      {/* OBJECTIVES */}
+      {/* COACHES */}
       <section className="mx-auto max-w-7xl px-6 py-32">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <span className="text-xs uppercase tracking-[0.3em] text-primary">03 / Objectives</span>
-            <h2 className="font-display text-5xl md:text-7xl mt-4">What we<br />will ship.</h2>
-            <img src={trainerImg} alt="Trainer coaching a client" width={1280} height={1600} loading="lazy" className="mt-10 w-full aspect-[4/5] object-cover grayscale" />
+            <span className="text-xs uppercase tracking-[0.3em] text-primary">Coaches</span>
+            <h2 className="font-display text-5xl md:text-7xl mt-4">The team in<br />your corner.</h2>
+            <p className="mt-6 text-muted-foreground">
+              Every GMS coach is certified, vetted, and continuously trained. They write your program, watch your form, and celebrate every PR with you.
+            </p>
+            <img src={trainerImg} alt="GMS coach demonstrating a lift" width={1280} height={1600} loading="lazy" className="mt-10 w-full aspect-[4/5] object-cover grayscale" />
           </div>
           <ol className="md:col-span-7 space-y-px bg-border">
             {[
-              "Design a centralized digital platform for gym operations",
-              "Enable members to track workouts, nutrition, and progress accurately",
-              "Equip trainers with tools to monitor and guide multiple clients",
-              "Automate membership, subscriptions, and payment processing",
-              "Generate analytical reports for data-driven decisions",
-              "Boost member motivation through structured programs and feedback",
-            ].map((o, i) => (
-              <li key={o} className="bg-background flex gap-6 p-8 hover:bg-card transition">
-                <span className="font-display text-3xl text-primary w-12">{String(i + 1).padStart(2, "0")}</span>
-                <p className="text-lg pt-1">{o}</p>
+              ["Amani", "Head Strength Coach", "Powerlifting · 10 yrs"],
+              ["Wanjiru", "Conditioning Lead", "CrossFit L3 · Pre/Postnatal"],
+              ["Brian", "Personal Training", "Sports Science MSc"],
+              ["Leila", "Nutrition Coach", "Registered Dietitian"],
+              ["Kevin", "Mobility & Recovery", "FRC · Sports Massage"],
+              ["Zawadi", "Group Fitness", "Spin · HIIT · Yoga"],
+            ].map(([name, role, cred]) => (
+              <li key={name} className="bg-background flex gap-6 p-8 hover:bg-card transition items-center">
+                <span className="w-14 h-14 bg-primary text-primary-foreground font-display text-2xl flex items-center justify-center">{name[0]}</span>
+                <div className="flex-1">
+                  <div className="font-display text-2xl">{name}</div>
+                  <div className="text-sm text-muted-foreground">{role}</div>
+                </div>
+                <span className="hidden md:block text-xs uppercase tracking-widest text-muted-foreground">{cred}</span>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* METHODOLOGY TIMELINE */}
+      {/* TESTIMONIALS */}
       <section className="bg-card border-y border-border">
         <div className="mx-auto max-w-7xl px-6 py-32">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">04 / Methodology</span>
-          <h2 className="font-display text-5xl md:text-7xl mt-4 mb-16">Agile, iterative, accountable.</h2>
-          <div className="grid md:grid-cols-6 gap-6">
+          <span className="text-xs uppercase tracking-[0.3em] text-primary">Members</span>
+          <h2 className="font-display text-5xl md:text-7xl mt-4 mb-16">Real people.<br />Real results.</h2>
+          <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
-              ["Analysis", "Requirements & SRS"],
-              ["Design", "Architecture & UX"],
-              ["Build", "React + Node + Postgres"],
-              ["Test", "Unit, Integration, UAT"],
-              ["Deploy", "Hosting & go-live"],
-              ["Maintain", "Optimize & extend"],
-            ].map(([t, d], i) => (
-              <div key={t} className="relative border-t-2 border-primary pt-6">
-                <div className="absolute -top-3 left-0 w-6 h-6 bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">{i + 1}</div>
-                <h4 className="font-display text-2xl">{t}</h4>
-                <p className="text-sm text-muted-foreground mt-2">{d}</p>
-              </div>
+              { q: "Lost 14kg in six months and finally pulled a bodyweight deadlift. The dashboard kept me honest.", n: "Faith K.", r: "Member, 1 year" },
+              { q: "I bounced between gyms for years. GMS is the first place where the coach actually knows my program.", n: "David O.", r: "Member, 8 months" },
+              { q: "Booking classes, paying my dues, logging meals — all in one place. It just works.", n: "Mercy N.", r: "Member, 2 years" },
+            ].map((t) => (
+              <figure key={t.n} className="bg-background p-10">
+                <blockquote className="font-display text-2xl leading-tight">“{t.q}”</blockquote>
+                <figcaption className="mt-6 text-sm">
+                  <div className="font-bold">{t.n}</div>
+                  <div className="text-muted-foreground text-xs uppercase tracking-widest">{t.r}</div>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
@@ -192,14 +203,19 @@ function Index() {
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-32 text-center">
         <h2 className="font-display text-6xl md:text-9xl">
-          No more<br /><span className="text-stroke">excuses.</span>
+          Your first week<br /><span className="text-primary">is on us.</span>
         </h2>
         <p className="mt-8 max-w-xl mx-auto text-muted-foreground text-lg">
-          A unified platform that bridges gym management and fitness tracking — built as a final year project at KCA University.
+          Walk in, train with a coach, try a class, take a tour. No card required.
         </p>
-        <Link to="/contact" className="mt-10 inline-flex bg-primary text-primary-foreground px-10 py-5 font-bold uppercase tracking-wider hover:bg-primary/90 transition">
-          Request a demo →
-        </Link>
+        <div className="mt-10 flex flex-wrap gap-4 justify-center">
+          <Link to="/pricing" className="bg-primary text-primary-foreground px-10 py-5 font-bold uppercase tracking-wider hover:bg-primary/90 transition">
+            Claim free week →
+          </Link>
+          <Link to="/contact" className="border border-border px-10 py-5 font-bold uppercase tracking-wider hover:border-primary transition">
+            Book a tour
+          </Link>
+        </div>
       </section>
     </>
   );
