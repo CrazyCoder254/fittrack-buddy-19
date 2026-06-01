@@ -9,6 +9,7 @@ export function SiteNav() {
   const links = [
     { to: "/", label: "Home" },
     { to: "/features", label: "Features" },
+    { to: "/pricing", label: "Membership" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ] as const;
@@ -17,10 +18,10 @@ export function SiteNav() {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur-md bg-background/70">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center font-display text-xl text-primary-foreground group-hover:rotate-6 transition-transform">F</div>
-          <span className="font-display text-xl tracking-wider">FORGE/FIT</span>
+          <div className="w-9 h-9 bg-primary flex items-center justify-center font-display text-base text-primary-foreground group-hover:rotate-6 transition-transform">GMS</div>
+          <span className="hidden sm:inline font-display text-lg tracking-wider">Gym Management System</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {links.map((l) => (
             <Link key={l.to} to={l.to}
               className="text-sm font-medium tracking-wide uppercase hover:text-primary transition-colors"
@@ -39,7 +40,7 @@ export function SiteNav() {
             </>
           ) : (
             <Link to="/login" className="bg-primary text-primary-foreground px-5 py-2 text-sm font-bold uppercase tracking-wider hover:bg-primary/90">
-              Sign In
+              Join Now
             </Link>
           )}
         </nav>
@@ -61,7 +62,7 @@ export function SiteNav() {
                 className="uppercase text-sm font-medium text-left">Sign Out</button>
             </>
           ) : (
-            <Link to="/login" className="uppercase text-sm font-medium" onClick={() => setOpen(false)}>Sign In</Link>
+            <Link to="/login" className="uppercase text-sm font-medium" onClick={() => setOpen(false)}>Join Now</Link>
           )}
         </nav>
       )}
